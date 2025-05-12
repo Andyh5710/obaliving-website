@@ -1,56 +1,530 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Orange Beach Alabama Living | Andy Hollis</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange Beach Alabama Living | Luxury Coastal Properties</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-bg {
+            background: linear-gradient(rgba(255, 165, 0, 0.8), rgba(255, 165, 0, 0.8)), url('https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .wave-divider {
+            height: 150px;
+            overflow: hidden;
+        }
+        
+        .wave-divider svg {
+            height: 100%;
+            width: 100%;
+        }
+        
+        .wave-divider .shape-fill {
+            fill: #FFFFFF;
+        }
+    </style>
 </head>
-<body class="font-sans text-gray-800 bg-white">
-  <!-- Header -->
-  <header class="bg-orange-500 text-white p-4 flex justify-between items-center text-sm">
-    <div>
-      <i class="fas fa-phone-alt mr-2"></i> (251) 333-1234
-      <i class="fas fa-envelope ml-6 mr-2"></i> andy@obaliving.com
+<body class="font-sans text-gray-800">
+    <!-- Top Bar -->
+    <div class="bg-orange-500 text-white py-2 px-4 flex justify-between items-center text-sm">
+        <div>
+            <i class="fas fa-phone-alt mr-1"></i> (251) 555-1234
+            <i class="fas fa-envelope ml-4 mr-1"></i> info@orangebeachaliving.com
+        </div>
+        <div class="flex space-x-4">
+            <a href="#" class="hover:text-orange-200"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-orange-200"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-orange-200"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-orange-200"><i class="fab fa-linkedin-in"></i></a>
+        </div>
     </div>
-    <div class="space-x-4">
-      <a href="https://facebook.com" class="hover:text-orange-200"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://instagram.com" class="hover:text-orange-200"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com/@obaliving" class="hover:text-orange-200"><i class="fab fa-youtube"></i></a>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="text-2xl font-bold text-orange-500 mr-2">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div>
+                    <span class="text-orange-500 font-bold text-xl">Orange Beach</span>
+                    <span class="text-blue-800 font-bold text-xl">Alabama Living</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-blue-800 font-medium hover:text-orange-500">Home</a>
+                <a href="#" class="text-blue-800 font-medium hover:text-orange-500">Properties</a>
+                <a href="#" class="text-blue-800 font-medium hover:text-orange-500">Neighborhoods</a>
+                <a href="#" class="text-blue-800 font-medium hover:text-orange-500">About</a>
+                <a href="#" class="text-blue-800 font-medium hover:text-orange-500">Contact</a>
+            </div>
+            
+            <button class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-blue-800 text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center justify-center text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Find Your Perfect Beach Home</h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto">Luxury coastal properties in beautiful Orange Beach, Alabama</p>
+            
+            <div class="bg-white rounded-lg shadow-xl p-6 max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flex-1">
+                        <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-700">
+                            <option>Property Type</option>
+                            <option>Single Family Home</option>
+                            <option>Condo</option>
+                            <option>Vacation Home</option>
+                            <option>Waterfront Property</option>
+                        </select>
+                    </div>
+                    <div class="flex-1">
+                        <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-700">
+                            <option>Price Range</option>
+                            <option>$200,000 - $500,000</option>
+                            <option>$500,000 - $1,000,000</option>
+                            <option>$1,000,000 - $2,000,000</option>
+                            <option>$2,000,000+</option>
+                        </select>
+                    </div>
+                    <div class="flex-1">
+                        <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-700">
+                            <option>Bedrooms</option>
+                            <option>1+</option>
+                            <option>2+</option>
+                            <option>3+</option>
+                            <option>4+</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 w-full md:w-auto">
+                            <i class="fas fa-search mr-2"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider relative">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
     </div>
-  </header>
 
-  <!-- Hero -->
-  <section class="bg-cover bg-center text-white text-center py-32" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1950&q=80');">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">Orange Beach Living</h1>
-    <p class="text-xl mb-6">Real Estate, Vacation Homes & Investment Properties</p>
-    <a href="mailto:andy@obaliving.com" class="bg-white text-orange-500 font-bold px-6 py-3 rounded shadow hover:bg-orange-100">Contact Andy</a>
-  </section>
+    <!-- Featured Properties -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Featured Properties</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Discover our handpicked selection of premium properties in Orange Beach</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Property 1 -->
+                <div class="property-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury Beachfront Home" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">For Sale</div>
+                        <div class="absolute bottom-4 left-4 bg-white text-orange-500 px-3 py-1 rounded-full text-sm font-medium">$1,250,000</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">Beachfront Paradise</h3>
+                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-orange-500 mr-1"></i> 123 Coastal Drive, Orange Beach, AL</p>
+                        <div class="flex justify-between text-gray-700 border-b border-gray-200 pb-4 mb-4">
+                            <span><i class="fas fa-bed text-orange-500 mr-1"></i> 4 Beds</span>
+                            <span><i class="fas fa-bath text-orange-500 mr-1"></i> 3 Baths</span>
+                            <span><i class="fas fa-ruler-combined text-orange-500 mr-1"></i> 2,800 sqft</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Stunning beachfront property with panoramic Gulf views, private beach access, and luxury finishes throughout.</p>
+                        <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg font-medium transition duration-300">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Property 2 -->
+                <div class="property-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern Condo" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">For Rent</div>
+                        <div class="absolute bottom-4 left-4 bg-white text-orange-500 px-3 py-1 rounded-full text-sm font-medium">$3,500/mo</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">Harbor View Condo</h3>
+                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-orange-500 mr-1"></i> 456 Marina Lane, Orange Beach, AL</p>
+                        <div class="flex justify-between text-gray-700 border-b border-gray-200 pb-4 mb-4">
+                            <span><i class="fas fa-bed text-orange-500 mr-1"></i> 2 Beds</span>
+                            <span><i class="fas fa-bath text-orange-500 mr-1"></i> 2 Baths</span>
+                            <span><i class="fas fa-ruler-combined text-orange-500 mr-1"></i> 1,200 sqft</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Modern condo with breathtaking harbor views, resort-style amenities, and walking distance to restaurants.</p>
+                        <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg font-medium transition duration-300">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Property 3 -->
+                <div class="property-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Waterfront Estate" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">For Sale</div>
+                        <div class="absolute bottom-4 left-4 bg-white text-orange-500 px-3 py-1 rounded-full text-sm font-medium">$2,750,000</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">Canal Front Estate</h3>
+                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-orange-500 mr-1"></i> 789 Waterway Blvd, Orange Beach, AL</p>
+                        <div class="flex justify-between text-gray-700 border-b border-gray-200 pb-4 mb-4">
+                            <span><i class="fas fa-bed text-orange-500 mr-1"></i> 5 Beds</span>
+                            <span><i class="fas fa-bath text-orange-500 mr-1"></i> 4.5 Baths</span>
+                            <span><i class="fas fa-ruler-combined text-orange-500 mr-1"></i> 4,500 sqft</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Magnificent waterfront estate with private dock, infinity pool, and luxurious outdoor living spaces.</p>
+                        <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg font-medium transition duration-300">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <button class="bg-blue-800 hover:bg-blue-900 text-white px-8 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center">
+                    View All Properties <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
 
-  <!-- About -->
-  <section class="p-8 text-center max-w-3xl mx-auto">
-    <h2 class="text-2xl font-bold mb-4 text-blue-800">Meet Andy Hollis</h2>
-    <p class="text-gray-600 mb-4">
-      I'm Andy — a local real estate agent living right here in Orange Beach. I specialize in beachfront homes, luxury condos, and high-performing investment properties. My YouTube channel, <strong>Orange Beach Alabama Living</strong>, gives you an inside look at what it's like to live, invest, and play along Alabama’s Gulf Coast.
-    </p>
-    <p class="text-gray-600">
-      Whether you're relocating, retiring, or investing, I'm here to help make it simple. No pressure. Just honest insight and Southern hospitality.
-    </p>
-  </section>
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Why Choose Orange Beach Alabama Living</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">We're committed to helping you find your perfect coastal home with exceptional service</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="text-orange-500 text-4xl mb-4">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-3">Local Expertise</h3>
+                    <p class="text-gray-600">Our team has in-depth knowledge of Orange Beach neighborhoods, market trends, and hidden gems.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="text-orange-500 text-4xl mb-4">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-3">Best Deals</h3>
+                    <p class="text-gray-600">We negotiate the best prices and terms for our clients, whether buying or selling.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="text-orange-500 text-4xl mb-4">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-3">Full Service</h3>
+                    <p class="text-gray-600">From property search to closing and beyond, we provide comprehensive real estate services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- CTA -->
-  <section class="bg-blue-800 text-white text-center py-12">
-    <h2 class="text-3xl font-bold mb-2">Want to Explore Listings?</h2>
-    <p class="mb-6">Call or text me and let’s talk about your goals — or check out my latest videos for tours and tips!</p>
-    <a href="tel:2513331234" class="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded font-medium inline-block">📞 (251) 333-1234</a>
-  </section>
+    <!-- Testimonials -->
+    <section class="testimonial-bg py-16 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+                <div class="w-20 h-1 bg-white mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white bg-opacity-20 p-8 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-300 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6">"Working with Orange Beach Alabama Living was a dream! They found us the perfect beachfront condo that met all our needs and negotiated an amazing price."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-sm opacity-80">Home Buyer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-20 p-8 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-300 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6">"As an investor, I appreciate their market knowledge and honesty. They helped me build a portfolio of profitable rental properties in Orange Beach."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Thompson" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael Thompson</h4>
+                            <p class="text-sm opacity-80">Real Estate Investor</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-20 p-8 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-300 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6">"They sold our family beach house for 15% above asking price in just 10 days! Their marketing strategy and professional photos made all the difference."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Lisa Williams" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Lisa Williams</h4>
+                            <p class="text-sm opacity-80">Home Seller</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-sm p-6 text-center">
-    <p>&copy; 2025 Andy Hollis • Orange Beach Alabama Living</p>
-    <p>Brokered by eXp Realty • Licensed in Alabama</p>
-  </footer>
+    <!-- Orange Beach Area Guide -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Orange Beach Area Guide</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Discover why Orange Beach is one of Alabama's most desirable coastal communities</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Orange Beach" class="w-full rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4">Living in Orange Beach</h3>
+                    <p class="text-gray-600 mb-4">Orange Beach offers a perfect blend of natural beauty, recreational activities, and small-town charm with big-city amenities.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-orange-500 mt-1 mr-3">
+                                <i class="fas fa-umbrella-beach"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-800">32 Miles of Pristine Beaches</h4>
+                                <p class="text-gray-600">Enjoy sugar-white sand beaches along the Gulf of Mexico with crystal clear waters.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-orange-500 mt-1 mr-3">
+                                <i class="fas fa-fish"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-800">World-Class Fishing</h4>
+                                <p class="text-gray-600">Known as the "Red Snapper Capital of the World" with deep sea, bay, and pier fishing options.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-orange-500 mt-1 mr-3">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-800">Award-Winning Dining</h4>
+                                <p class="text-gray-600">Fresh seafood restaurants, waterfront dining, and local favorites throughout the area.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-orange-500 mt-1 mr-3">
+                                <i class="fas fa-golf-ball"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-800">Championship Golf</h4>
+                                <p class="text-gray-600">Several top-rated golf courses designed by legends like Arnold Palmer and Jerry Pate.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="mt-6 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center">
+                        Learn More About Orange Beach <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-blue-800 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Get the Latest Listings</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Sign up for our newsletter to receive new property alerts and market updates</p>
+            
+            <div class="max-w-xl mx-auto">
+                <form class="flex flex-col md:flex-row gap-4">
+                    <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-lg focus:outline-none text-gray-800">
+                    <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                        Subscribe <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+                <p class="text-sm mt-3 opacity-80">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="text-2xl font-bold text-orange-500 mr-2">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div>
+                            <span class="text-orange-500 font-bold text-xl">Orange Beach</span>
+                            <span class="text-white font-bold text-xl">Alabama Living</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">Your trusted partner for luxury coastal real estate in Orange Beach, Alabama.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-orange-500"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500">Properties</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500">Neighborhoods</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-orange-500 mt-1 mr-3"></i>
+                            <span>123 Coastal Highway, Orange Beach, AL 36561</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-orange-500 mt-1 mr-3"></i>
+                            <span>(251) 555-1234</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-orange-500 mt-1 mr-3"></i>
+                            <span>info@orangebeachaliving.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Business Hours</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between">
+                            <span>Monday - Friday</span>
+                            <span>9am - 6pm</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Saturday</span>
+                            <span>10am - 4pm</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday</span>
+                            <span>Closed</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Orange Beach Alabama Living. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-orange-500">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-orange-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Mobile Menu Toggle (would need additional implementation)
+        document.querySelector('.md\\:hidden').addEventListener('click', function() {
+            // This would toggle a mobile menu - needs additional HTML/CSS
+            alert('Mobile menu would open here in a full implementation');
+        });
+    </script>
 </body>
 </html>
-<!-- Trigger rebuild -->
